@@ -1,0 +1,2 @@
+# PrimDijkstra
+In this program I use Prim's algorithm to find the minimum spanning tree of a graph and Dijkstra's algorithm to find the shortest path of a graph. It stores a weighted graph in an adjacency vec using EdgeVecs. If a vertex is supplied that is out of range, a warning will be presented. This program will perform Prims algorithm on the undirected graph if -P flag is specified and Dijkstra’s algorithm on the directed graph if the -D flag is specified. The resulting parent and weight array will be printed.
