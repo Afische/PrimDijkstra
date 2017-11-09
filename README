@@ -1,0 +1,115 @@
+Adam Fischer
+ajfische
+CS 101
+11/29/16
+README
+greedy04
+
+"I have read and understood the Academic Misconduct Policy for
+Undergraduates, the related sections 102.01-102.016 and 105.15 of the
+UC Santa Cruz Student Policies and Regulations Handbook,
+and the related sections of the class syllabus."
+
+Adam Fischer
+
+"I wrote this assignment using only permitted sources
+that do not require citation, according to the syllabus."
+
+I have compiled the code on the school computer and tested it with the files used for testing. I also hand computed the correct answers to make sure my program works.
+
+----------------------------------------------------------------------
+
+In this program I use Prim's algorithm to find the minimum spanning tree of a graph and Dijkstra's algorithm to find the shortest path of a graph. It stores a weighted graph in an adjacency vec using EdgeVecs. If a vertex is supplied that is out of range, a warning will be presented. This program will perform Prims algorithm on the undirected graph if -P flag is specified and Dijkstra’s algorithm on the directed graph if the -D flag is specified. The resulting parent and weight array will be printed.
+
+Usage: greedy04 [-P/-D] [startVertex] test.in
+
+
+I hand calculated the below tests and found these results which matched my calculations:
+
+
+Below is the output of the two algorithms using pa04graph1.in
+
+/*greedy04 -P 1 pa04graph1.in*/
+/*This shows Prim's Algorithm on an undirected graph starting at vertex 1*/
+
+Prim's Algorithm starting at vertex: 1
+
+m = 13
+n = 9
+Original Graph:
+
+1 [7 (8.000000), 2 (3.000000), 6 (3.000000)]
+2 [3 (1.000000), 7 (6.000000), 1 (3.000000)]
+3 [2 (1.000000), 4 (5.000000), 8 (9.000000)]
+4 [8 (1.000000), 3 (5.000000)]
+5 [9 (3.000000), 6 (4.000000)]
+6 [5 (4.000000), 9 (7.000000), 1 (3.000000)]
+7 [9 (2.000000), 8 (8.000000), 1 (8.000000), 2 (6.000000)]
+8 [7 (8.000000), 4 (1.000000), 3 (9.000000)]
+9 [5 (3.000000), 7 (2.000000), 6 (7.000000)]
+
+
+Vertex | Status | Priority | Parent
+1        t        0.00       -1
+2        t        3.00       1
+3        t        1.00       2
+4        t        5.00       3
+5        t        4.00       6
+6        t        3.00       1
+7        t        2.00       9
+8        t        1.00       4
+9        t        3.00       5
+
+
+
+ /*greedy04 -D 1 pa04graph1.in*/
+
+ /*This shows Dijkstra's Algorithm on a directed graph starting at vertex 1*/
+
+Dijkstra's Algorithm at vertex: 1
+
+m = 13
+n = 9
+Original Graph:
+
+1 [2 (3.000000), 6 (3.000000)]
+2 [7 (6.000000)]
+3 [2 (1.000000), 4 (5.000000), 8 (9.000000)]
+4 [8 (1.000000)]
+5 [ ]
+6 [5 (4.000000), 9 (7.000000)]
+7 [1 (8.000000)]
+8 [7 (8.000000)]
+9 [5 (3.000000), 7 (2.000000)]
+
+
+Vertex | Status | Priority | Parent
+1        t        0.00       -1
+2        t        3.00       1
+3        u        0.00       0
+4        u        0.00       0
+5        t        7.00       6
+6        t        3.00       1
+7        t        9.00       2
+8        u        0.00       0
+9        t        10.00       6
+
+
+
+
+
+Files Submitted:
+
+README
+greedy04.c
+minPQ.c
+minPQ.h
+edgeVec.c
+edgeVec.h
+LoadWgtGraph.c
+LoadWgtGraph.h
+test1.in
+pa04graph1.in
+pa04graph2.in
+pa04graph8.in
+Makefile

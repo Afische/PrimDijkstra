@@ -1,0 +1,253 @@
+
+Prototype    10
+
+
+Input        05
+
+
+Wgted Edges  05
+
+
+Built        05
+
+
+Adjs print   00
+
+
+
+Getmin logic 04
+
+Updat Frnge  09
+
+Priorty Dij  05
+
+PQ data str  04
+
+
+Organization 10
+
+
+Makefile     08
+
+Pre/Post     05
+
+
+Test files   05
+
+
+README       05
+
+      GRADE  80
+
+
+
+This file is pa04-grading-template.txt in the class locker.
+
+C is 70% and Makefile is 10% and test files+README is 20%
+
+The grade for pa04 will break down grossly as follows.
+
+Prototype agree with edgeVec.h         [10]    _10_
+And comments added
+
+Input file(s) read, eof detected       [05]    _5_
+fgets in C                                     __
+
+Weighted edge (3 fields) from buffer   [05]    _5_
+sscanf in C
+
+Array of adjacency vectors built       [10]    _5_     <--5
+      using EdgeVec ADT ops, realloc
+
+Adjacency-vector contents correctly    [00]    _0_
+printed (5 points part credit if
+MST and SSSP are not working)
+
+Correct getMin logic                   [05]    _4_    <--1
+
+Good updateFringe logic for MST,SSSP   [10]    _9_   <--1
+
+Correct priority for Dijkstra (SSSP)   [05]    _5_
+
+Final priority-queue fields printed    [05]    _4_   <--1
+status, priority (double), parent
+
+Correct organization of functions in   [10]    _10_
+      header (.h) files.
+
+Makefile                               [10]    _8_   <--2
+
+Accurate specifications as comments,   [05]    _5_
+      in header files when appropriate.
+
+Test file(s) to demonstrate all cases  [15]    _5_   <--10
+(error conditions not required)
+
+README with appropriate contents       [05]    _5_
+
+                                       GRADE = _80__
+
+
+
+
+
+
+    TARGETS FOUND: greedy04
+-----------TRYING make  greedy04 --------
+------ EXECUTABLE  greedy04 ----
+-rwxrwxr-x. 1 avg users 27616 Dec  3 14:45 greedy04
+
+
+
+
+--- TRYING TO RUN  greedy04 -D 3 __pa04graph1.in
+
+Dijkstra's Algorithm at vertex: 3
+
+m = 13
+n = 9
+Original Graph:
+
+1 [2 (3.000000), 6 (3.000000)]
+2 [7 (6.000000)]
+3 [2 (1.000000), 4 (5.000000), 8 (9.000000)]
+4 [8 (1.000000)]
+5 [ ]
+6 [5 (4.000000), 9 (7.000000)]
+7 [1 (8.000000)]
+8 [7 (8.000000)]
+9 [5 (3.000000), 7 (2.000000)]
+
+Vertex | Status | Priority | Parent
+1        t        15.00       7
+2        t        1.00       3
+3        t        0.00       -1
+4        t        5.00       3
+5        t        22.00       6
+6        t        18.00       1
+7        t        7.00       2
+8        t        6.00       4
+9        t        25.00       6
+------- EXIT STATUS: 0
+
+
+
+--- TRYING TO RUN  greedy04 -P 1 __pa04graph2.in
+*** Error in `./greedy04': realloc(): invalid next size: 0x00000000007212d0 ***
+======= Backtrace: =========
+/lib64/libc.so.6(+0x7b194)[0x7f683c38f194]
+/lib64/libc.so.6(+0x7f868)[0x7f683c393868]
+/lib64/libc.so.6(+0x817e2)[0x7f683c3957e2]
+./greedy04[0x401580]
+./greedy04[0x4017fc]
+./greedy04[0x401886]
+./greedy04[0x40100a]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x7f683c335b15]
+./greedy04[0x400819]
+======= Memory map: ========
+00400000-00403000 r-xp 00000000 00:27 1613202752                         /afs/cats.ucsc.edu/courses/cmps101-avg/pa04nov30/ajfische/greedy04
+00602000-00603000 r--p 00002000 00:27 1613202752                         /afs/cats.ucsc.edu/courses/cmps101-avg/pa04nov30/ajfische/greedy04
+00603000-00604000 rw-p 00003000 00:27 1613202752                         /afs/cats.ucsc.edu/courses/cmps101-avg/pa04nov30/ajfische/greedy04
+00721000-00742000 rw-p 00000000 00:00 0                                  [heap]
+7f6838000000-7f6838021000 rw-p 00000000 00:00 0
+7f6838021000-7f683c000000 ---p 00000000 00:00 0
+7f683c0fe000-7f683c113000 r-xp 00000000 08:02 147                        /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f683c113000-7f683c312000 ---p 00015000 08:02 147                        /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f683c312000-7f683c313000 r--p 00014000 08:02 147                        /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f683c313000-7f683c314000 rw-p 00015000 08:02 147                        /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7f683c314000-7f683c4cb000 r-xp 00000000 08:02 3783                       /usr/lib64/libc-2.17.so
+7f683c4cb000-7f683c6cb000 ---p 001b7000 08:02 3783                       /usr/lib64/libc-2.17.so
+7f683c6cb000-7f683c6cf000 r--p 001b7000 08:02 3783                       /usr/lib64/libc-2.17.so
+7f683c6cf000-7f683c6d1000 rw-p 001bb000 08:02 3783                       /usr/lib64/libc-2.17.so
+7f683c6d1000-7f683c6d6000 rw-p 00000000 00:00 0
+7f683c6d6000-7f683c6f7000 r-xp 00000000 08:02 192766                     /usr/lib64/ld-2.17.so
+7f683c8d0000-7f683c8d3000 rw-p 00000000 00:00 0
+7f683c8f3000-7f683c8f7000 rw-p 00000000 00:00 0
+7f683c8f7000-7f683c8f8000 r--p 00021000 08:02 192766                     /usr/lib64/ld-2.17.so
+7f683c8f8000-7f683c8f9000 rw-p 00022000 08:02 192766                     /usr/lib64/ld-2.17.so
+7f683c8f9000-7f683c8fa000 rw-p 00000000 00:00 0
+7ffede607000-7ffede628000 rw-p 00000000 00:00 0                          [stack]
+7ffede724000-7ffede726000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+Prim's Algorithm starting at vertex: 1
+
+Abort (core dumped)
+------- EXIT STATUS: 134
+
+
+
+--- TRYING TO RUN  greedy04 -D 1 __pa04graph1.in
+
+Dijkstra's Algorithm at vertex: 1
+
+m = 13
+n = 9
+Original Graph:
+
+1 [2 (3.000000), 6 (3.000000)]
+2 [7 (6.000000)]
+3 [2 (1.000000), 4 (5.000000), 8 (9.000000)]
+4 [8 (1.000000)]
+5 [ ]
+6 [5 (4.000000), 9 (7.000000)]
+7 [1 (8.000000)]
+8 [7 (8.000000)]
+9 [5 (3.000000), 7 (2.000000)]
+
+Vertex | Status | Priority | Parent
+1        t        0.00       -1
+2        t        3.00       1
+3        u        0.00       0
+4        u        0.00       0
+5        t        7.00       6
+6        t        3.00       1
+7        t        9.00       2
+8        u        0.00       0
+9        t        10.00       6
+------- EXIT STATUS: 0
+
+
+
+--- TRYING TO RUN  greedy04 -P 1 __pa04graph8.in
+*** Error in `./greedy04': realloc(): invalid next size: 0x0000000001df8370 ***
+======= Backtrace: =========
+/lib64/libc.so.6(+0x7b194)[0x7fc652df5194]
+/lib64/libc.so.6(+0x7f868)[0x7fc652df9868]
+/lib64/libc.so.6(+0x817e2)[0x7fc652dfb7e2]
+./greedy04[0x401580]
+./greedy04[0x4017ad]
+./greedy04[0x401886]
+./greedy04[0x40100a]
+/lib64/libc.so.6(__libc_start_main+0xf5)[0x7fc652d9bb15]
+./greedy04[0x400819]
+======= Memory map: ========
+00400000-00403000 r-xp 00000000 00:27 1613202752                         /afs/cats.ucsc.edu/courses/cmps101-avg/pa04nov30/ajfische/greedy04
+00602000-00603000 r--p 00002000 00:27 1613202752                         /afs/cats.ucsc.edu/courses/cmps101-avg/pa04nov30/ajfische/greedy04
+00603000-00604000 rw-p 00003000 00:27 1613202752                         /afs/cats.ucsc.edu/courses/cmps101-avg/pa04nov30/ajfische/greedy04
+01df8000-01e19000 rw-p 00000000 00:00 0                                  [heap]
+7fc64c000000-7fc64c021000 rw-p 00000000 00:00 0
+7fc64c021000-7fc650000000 ---p 00000000 00:00 0
+7fc652b64000-7fc652b79000 r-xp 00000000 08:02 147                        /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fc652b79000-7fc652d78000 ---p 00015000 08:02 147                        /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fc652d78000-7fc652d79000 r--p 00014000 08:02 147                        /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fc652d79000-7fc652d7a000 rw-p 00015000 08:02 147                        /usr/lib64/libgcc_s-4.8.5-20150702.so.1
+7fc652d7a000-7fc652f31000 r-xp 00000000 08:02 3783                       /usr/lib64/libc-2.17.so
+7fc652f31000-7fc653131000 ---p 001b7000 08:02 3783                       /usr/lib64/libc-2.17.so
+7fc653131000-7fc653135000 r--p 001b7000 08:02 3783                       /usr/lib64/libc-2.17.so
+7fc653135000-7fc653137000 rw-p 001bb000 08:02 3783                       /usr/lib64/libc-2.17.so
+7fc653137000-7fc65313c000 rw-p 00000000 00:00 0
+7fc65313c000-7fc65315d000 r-xp 00000000 08:02 192766                     /usr/lib64/ld-2.17.so
+7fc653336000-7fc653339000 rw-p 00000000 00:00 0
+7fc653359000-7fc65335d000 rw-p 00000000 00:00 0
+7fc65335d000-7fc65335e000 r--p 00021000 08:02 192766                     /usr/lib64/ld-2.17.so
+7fc65335e000-7fc65335f000 rw-p 00022000 08:02 192766                     /usr/lib64/ld-2.17.so
+7fc65335f000-7fc653360000 rw-p 00000000 00:00 0
+7fff22260000-7fff22281000 rw-p 00000000 00:00 0                          [stack]
+7fff22281000-7fff22283000 r-xp 00000000 00:00 0                          [vdso]
+ffffffffff600000-ffffffffff601000 r-xp 00000000 00:00 0                  [vsyscall]
+
+Prim's Algorithm starting at vertex: 1
+
+Abort (core dumped)
+------- EXIT STATUS: 134
